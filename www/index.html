@@ -37,7 +37,10 @@
                 <p class="event received">www.admautomation.com</p>
             </div>
         </div>
+<!--
 		<iframe src="http://www.admautomation.com" style="height:100%; width:100%;display: none;" id="web">
+-->
+		<iframe src="http://www.admautomation.com" style="height:100%; width:100%;" id="web">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
@@ -46,12 +49,12 @@
         <script type="text/javascript" src="js/utils.js" ></script>
         <script type="text/javascript" >
         if ( internetIsAvailable() ) {
-            var web = document.getElementById('web');
-            web.setAttribute('style', 'display:block;');
+            //~ var web = document.getElementById('web');
+            //~ web.setAttribute('style', 'display:block;');
         }
         else {
-            alert("Nessuna connessione ad Internet. L'App sarà chiusa.");
-            navigator.app.exitApp();
+            //~ alert("Nessuna connessione ad Internet. L'App sarà chiusa.");
+            //~ navigator.app.exitApp();
         }
         </script>
     </body>
