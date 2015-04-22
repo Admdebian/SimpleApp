@@ -42,10 +42,37 @@ var app = {
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        //~ receivedElement.setAttribute('style', 'display:block;');
+        receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
-        alert('opl');
-		navigator.notification.vibrate(3000)
-    }
+        //~ console.log('Received Event: ' + id);
+		navigator.notification.beep(2);
+    },
+    beepNow: function() {
+		navigator.notification.beep(2);
+	},
+	checkConnection: function() {
+		var networkState = navigator.connection.type;
+
+		var states = {};
+		states[Connection.UNKNOWN]  = 'Unknown connection';
+		states[Connection.ETHERNET] = 'Ethernet connection';
+		states[Connection.WIFI]     = 'WiFi connection';
+		states[Connection.CELL_2G]  = 'Cell 2G connection';
+		states[Connection.CELL_3G]  = 'Cell 3G connection';
+		states[Connection.CELL_4G]  = 'Cell 4G connection';
+		states[Connection.CELL]     = 'Cell generic connection';
+		states[Connection.NONE]     = 'No network connection';
+
+		//~ alert('Connection type: ' + states[networkState]);
+		return networkState;
+	},
+	amIOnline: function() {
+		if (this.checkConnection() == 'none' ) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
 };

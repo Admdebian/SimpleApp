@@ -32,60 +32,16 @@
     <body>
         <div class="app" id="splash">
             <h1>Adm Automation</h1>
-            <div id="deviceready" class="blink">
+            <div id="deviceready" class="blink" onclick="">
                 <p class="event listening">Adm Automation Website</p>
                 <p class="event received">www.admautomation.com</p>
             </div>
-        </div>
-		<iframe src="http://www.admautomation.com" style="height:100%; width:100%;display: none;" id="web">
-<!--
-		<iframe src="http://www.admautomation.com" style="height:100%; width:100%;" id="web">
--->
+
+		</div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
-        </script>
-        <script type="text/javascript" >
-function checkConnection() {
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    return networkState;
-}
-
-function internetIsAvailable() {
-    if ( checkConnection() != Connection.NONE) {
-        return true;
-    }
-    return false;
-	return false;
-}        
-        </script>
-        <script type="text/javascript" src="js/utils.js" ></script>
-        <script type="text/javascript" >
-        if ( internetIsAvailable() ) {
-            //~ var web = document.getElementById('web');
-            //~ web.setAttribute('style', 'display:block;');
-			navigator.notification.vibrate(1000)
-            alert("Connesso!");
-			navigator.notification.vibrate(1000)
-        }
-        else {
-			navigator.notification.vibrate(1000)
-            alert("Nessuna connessione ad Internet. L'App sarà chiusa.");
-			navigator.notification.vibrate(1000)
-            navigator.app.exitApp();
-        }
         </script>
     </body>
 </html>
